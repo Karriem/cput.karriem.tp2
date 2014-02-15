@@ -33,14 +33,35 @@ public class StudentTest {
      public void createStudent() { 
         
         List<StudentDetails> studentRec = stud.generateStudent();
+        //Checking if the list contains 10 items
         Assert.assertEquals(studentRec.size(), 10);
+        //checking if the list contains a specific value
+        Assert.assertEquals(studentRec.get(0).getFirstName(), "Karriem");
         
         List<StudentDetails> studentRecD = stud.generateDuplicates(studentRec);
-        Assert.assertEquals(studentRecD.size(), 20);
+        //Checking if the list has 20 items 
+        Assert.assertEquals(studentRecD.size(), 20);        
+        //Checking if the list contains duplicates
+        int counter = 0;
+        for (StudentDetails student : studentRecD){
+           if (student.getFirstName().equalsIgnoreCase("Karriem")){
+               counter ++;
+           }           
+        }        
+        Assert.assertEquals(counter, 2);
+        
 //        stud.displayStudentsDuplicates(studentRecD);
         
         Set<StudentDetails> studentSetRec = stud.generateNonDuplicates(studentRecD, stud.studentSetRec);
         Assert.assertEquals(studentSetRec.size(), 10);
+        //Checking if the list contains no duplicates
+        int counter2 = 0;
+        for (StudentDetails student : studentSetRec){
+           if (student.getFirstName().equalsIgnoreCase("Karriem")){
+               counter2 ++;
+           }           
+        }        
+        Assert.assertEquals(counter2, 1);
 //        stud.displayNonDuplicates(studentSetRec);
         
         Map<String,StudentDetails> studentBook = stud.createPhoneBook(stud.studentBook, studentSetRec);
