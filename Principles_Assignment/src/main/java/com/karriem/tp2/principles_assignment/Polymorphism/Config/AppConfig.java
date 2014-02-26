@@ -4,10 +4,9 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.software_design_principles.Polymorphism.Config;
+package com.karriem.tp2.principles_assignment.Polymorphism.Config;
 
-import com.karriem.tp2.software_design_principles.Polymorphism.Service.Impl.PatientServiceImpl;
-import com.karriem.tp2.software_design_principles.Polymorphism.Service.PatientService;
+import com.karriem.tp2.principles_assignment.Polymorphism.Service.Impl.PatientServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -19,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
     
     @Bean (name = "poly")
-    public PatientService getPoly(){
+    public PatientServiceImpl getPoly(){
         
         return new PatientServiceImpl();
     }

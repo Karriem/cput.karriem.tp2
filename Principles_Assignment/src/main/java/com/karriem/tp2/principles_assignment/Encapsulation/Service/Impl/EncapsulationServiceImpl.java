@@ -4,10 +4,12 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.software_design_principles.Encapsulation.Service.Impl;
+package com.karriem.tp2.principles_assignment.Encapsulation.Service.Impl;
 
-import com.karriem.tp2.software_design_principles.Model.Patients;
-import com.karriem.tp2.software_design_principles.Encapsulation.Service.EncapsulationService;
+
+import com.karriem.tp2.principles_assignment.Encapsulation.Service.EncapsulationService;
+import com.karriem.tp2.principles_assignment.Model.Patients;
+
 
 /**
  *

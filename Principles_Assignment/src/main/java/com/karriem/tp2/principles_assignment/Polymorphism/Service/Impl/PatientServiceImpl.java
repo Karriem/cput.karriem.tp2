@@ -4,11 +4,14 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.software_design_principles.Polymorphism.Service.Impl;
+package com.karriem.tp2.principles_assignment.Polymorphism.Service.Impl;
 
-import com.karriem.tp2.software_design_principles.CriticalPatient;
-import com.karriem.tp2.software_design_principles.Model.Patients;
-import com.karriem.tp2.software_design_principles.Polymorphism.Service.PatientService;
+import com.karriem.tp2.principles_assignment.CriticalPatient;
+import com.karriem.tp2.principles_assignment.Model.Patients;
+import com.karriem.tp2.principles_assignment.Polymorphism.Service.PatientService;
+
+
+
 
 /**
  *

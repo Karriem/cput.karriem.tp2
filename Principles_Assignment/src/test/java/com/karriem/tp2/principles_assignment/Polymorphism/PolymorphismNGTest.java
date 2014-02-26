@@ -4,14 +4,12 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.software_design_principles.Polymorphism;
+package com.karriem.tp2.principles_assignment.Polymorphism;
 
-import com.karriem.tp2.software_design_principles.Encapsulation.Config.AppConfig;
-import com.karriem.tp2.software_design_principles.Model.Patients;
-import com.karriem.tp2.software_design_principles.CriticalPatient;
-import com.karriem.tp2.software_design_principles.Polymorphism.Service.PatientService;
+import com.karriem.tp2.principles_assignment.CriticalPatient;
+import com.karriem.tp2.principles_assignment.Model.Patients;
+import com.karriem.tp2.principles_assignment.Polymorphism.Service.PatientService;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;

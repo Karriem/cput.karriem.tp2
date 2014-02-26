@@ -4,10 +4,12 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.software_design_principles.Encapsulation.Config;
+package com.karriem.tp2.principles_assignment.Encapsulation.Config;
 
-import com.karriem.tp2.software_design_principles.Encapsulation.Service.EncapsulationService;
-import com.karriem.tp2.software_design_principles.Encapsulation.Service.Impl.EncapsulationServiceImpl;
+import com.karriem.tp2.principles_assignment.Encapsulation.Service.EncapsulationService;
+import com.karriem.tp2.principles_assignment.Encapsulation.Service.Impl.EncapsulationServiceImpl;
+
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

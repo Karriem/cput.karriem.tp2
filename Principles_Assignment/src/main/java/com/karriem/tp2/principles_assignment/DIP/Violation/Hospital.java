@@ -4,11 +4,9 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.software_design_principles.DIP.Violation;
+package com.karriem.tp2.principles_assignment.DIP.Violation;
 
-import com.karriem.tp2.software_design_principles.Model.Doctor;
-import com.karriem.tp2.software_design_principles.Model.Patients;
-import com.karriem.tp2.software_design_principles.Model.TreatmentList;
+import com.karriem.tp2.principles_assignment.Model.TreatmentList;
 import java.util.ArrayList;
 import java.util.List;
 

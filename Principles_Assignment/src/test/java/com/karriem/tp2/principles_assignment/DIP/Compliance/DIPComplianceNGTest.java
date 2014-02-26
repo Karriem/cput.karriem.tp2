@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.software_design_principles.DIP.Compliance;
+package com.karriem.tp2.principles_assignment.DIP.Compliance;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -17,11 +17,11 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class DIPNGTest {
+public class DIPComplianceNGTest {
     
     private Doctor_GP doc = new Doctor_GP();
     
-    public DIPNGTest() {
+    public DIPComplianceNGTest() {
     }
 
     // TODO add test methods here.

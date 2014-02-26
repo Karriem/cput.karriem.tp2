@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.software_design_principles.Encapsulation.Service;
+package com.karriem.tp2.principles_assignment.Encapsulation.Service;
 
 /**
  *

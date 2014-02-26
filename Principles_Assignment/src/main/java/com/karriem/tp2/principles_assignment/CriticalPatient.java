@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.software_design_principles;
+package com.karriem.tp2.principles_assignment;
 
-import com.karriem.tp2.software_design_principles.Model.Patients;
+import com.karriem.tp2.principles_assignment.Model.Patients;
+
+
 
 /**
  *

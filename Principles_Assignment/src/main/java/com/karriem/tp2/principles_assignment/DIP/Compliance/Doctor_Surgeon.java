@@ -4,14 +4,13 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.software_design_principles.DIP.Compliance;
+package com.karriem.tp2.principles_assignment.DIP.Compliance;
 
-import com.karriem.tp2.software_design_principles.DIP.Violation.*;
-import com.karriem.tp2.software_design_principles.Model.Doctor;
-import com.karriem.tp2.software_design_principles.DoctorList;
-import com.karriem.tp2.software_design_principles.PatientList;
-import com.karriem.tp2.software_design_principles.Model.Patients;
-import com.karriem.tp2.software_design_principles.Model.TreatmentList;
+import com.karriem.tp2.principles_assignment.DoctorList;
+import com.karriem.tp2.principles_assignment.Model.Doctor;
+import com.karriem.tp2.principles_assignment.Model.Patients;
+import com.karriem.tp2.principles_assignment.Model.TreatmentList;
+import com.karriem.tp2.principles_assignment.PatientList;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class Doctor_Surgeon implements HospitalService{
     private DoctorList doc = new DoctorList();
     private TreatmentList treat = new TreatmentList();
     
-    @Override
+
     public List<TreatmentList> treatPatient(){
         
         pat.addPatients();

@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.software_design_principles.DIP.Violation;
+package com.karriem.tp2.principles_assignment.DIP.Violation;
 
-import com.karriem.tp2.software_design_principles.Model.TreatmentList;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -18,11 +17,11 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class DIPNGTest {
+public class DIPViolationNGTest {
     
     private Hospital hos = new Hospital();
     
-    public DIPNGTest() {
+    public DIPViolationNGTest() {
     }
 
     // TODO add test methods here.

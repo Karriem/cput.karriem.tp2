@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.software_design_principles.EncapsulationTest;
+package com.karriem.tp2.principles_assignment.EncapsulationTest;
 
-import com.karriem.tp2.software_design_principles.Encapsulation.Config.AppConfig;
-import com.karriem.tp2.software_design_principles.Encapsulation.Service.EncapsulationService;
+import com.karriem.tp2.principles_assignment.Encapsulation.Config.AppConfig;
+import com.karriem.tp2.principles_assignment.Encapsulation.Service.EncapsulationService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.testng.Assert;
