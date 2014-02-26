@@ -10,7 +10,7 @@ package com.karriem.tp2.principles_assignment.Polymorphism.Service;
  *
  * @author karriem
  */
-public interface PatientService {    
+public interface DoctorService {    
 
-    public String patientDetails();
+    public String getDoctor();
 }

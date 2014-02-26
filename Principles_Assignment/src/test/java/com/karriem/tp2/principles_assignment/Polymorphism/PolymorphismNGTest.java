@@ -6,9 +6,7 @@
 
 package com.karriem.tp2.principles_assignment.Polymorphism;
 
-import com.karriem.tp2.principles_assignment.CriticalPatient;
-import com.karriem.tp2.principles_assignment.Model.Patients;
-import com.karriem.tp2.principles_assignment.Polymorphism.Service.PatientService;
+import com.karriem.tp2.principles_assignment.Polymorphism.Service.Impl.DoctorServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -24,7 +22,7 @@ import org.testng.annotations.Test;
 public class PolymorphismNGTest {
     
     private static ApplicationContext ctx;
-    private static PatientService service;
+    private static DoctorServiceImpl service = new DoctorServiceImpl();
     
     public PolymorphismNGTest() {
     }
@@ -33,13 +31,9 @@ public class PolymorphismNGTest {
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void polyTest() {         
-         
-        Patients pat = new CriticalPatient();
-        
-        pat.setFirstName("Clark");        
+     public void polyTest() {   
      
-        Assert.assertEquals("Clark", pat.getFirstName());
+        Assert.assertEquals("Mikhail", service.getDoctor());
      }
 
     @BeforeClass

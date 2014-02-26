@@ -6,7 +6,8 @@
 
 package com.karriem.tp2.principles_assignment.Polymorphism.Config;
 
-import com.karriem.tp2.principles_assignment.Polymorphism.Service.Impl.PatientServiceImpl;
+import com.karriem.tp2.principles_assignment.Polymorphism.Service.DoctorService;
+import com.karriem.tp2.principles_assignment.Polymorphism.Service.Impl.DoctorServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,8 +19,8 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
     
     @Bean (name = "poly")
-    public PatientServiceImpl getPoly(){
+    public DoctorService getPoly(){
         
-        return new PatientServiceImpl();
+        return new DoctorServiceImpl();
     }
 }
