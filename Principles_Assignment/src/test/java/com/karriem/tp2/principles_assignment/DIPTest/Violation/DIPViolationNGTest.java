@@ -4,14 +4,9 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.principles_assignment.Polymorphism;
+package com.karriem.tp2.principles_assignment.DIPTest.Violation;
 
-
-import com.karriem.tp2.principles_assignment.Polymorphism.Config.AppConfig;
-import com.karriem.tp2.principles_assignment.Polymorphism.Service.DoctorService;
-import com.karriem.tp2.principles_assignment.Polymorphism.Service.Impl.DoctorServiceImpl;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import com.karriem.tp2.principles_assignment.DIP.Violation.Hospital;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -23,29 +18,26 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class PolymorphismNGTest {
+public class DIPViolationNGTest {
     
-    private static ApplicationContext ctx;
-    private static DoctorService service;
+    private Hospital hos = new Hospital();
     
-    public PolymorphismNGTest() {
+    public DIPViolationNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-  
-    @Test
-     public void polyTest() {   
+     @Test
+     public void getDocPatList() {
      
-        Assert.assertEquals("Mikhail", service.getDoctor());
+         Assert.assertEquals(hos.getToTreating().get(0).getDoctor_ID(), "D4");
+         Assert.assertEquals(hos.getToTreating().get(0).getPatient_ID(), "1000A");
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-        
-        ctx = new AnnotationConfigApplicationContext(AppConfig.class);
-        service = (DoctorService)ctx.getBean("poly");
+       
     }
 
     @AfterClass

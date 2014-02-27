@@ -4,15 +4,16 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.principles_assignment.Polymorphism;
+package com.karriem.tp2.principles_assignment.LSPTest.Violation;
 
-
-import com.karriem.tp2.principles_assignment.Polymorphism.Config.AppConfig;
-import com.karriem.tp2.principles_assignment.Polymorphism.Service.DoctorService;
-import com.karriem.tp2.principles_assignment.Polymorphism.Service.Impl.DoctorServiceImpl;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import com.karriem.tp2.principles_assignment.LSP.Violation.Service.Impl.Doctor;
+import com.karriem.tp2.principles_assignment.LSP.Violation.Service.Impl.Nurse;
+import com.karriem.tp2.principles_assignment.LSP.Violation.Service.Staff;
+import com.karriem.tp2.principles_assignment.Model.Patients;
+import java.util.ArrayList;
+import java.util.List;
 import org.testng.Assert;
+import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -23,29 +24,30 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class PolymorphismNGTest {
+public class LSPViolationNGTest {
     
-    private static ApplicationContext ctx;
-    private static DoctorService service;
+    List<Staff> pList = new ArrayList<Staff>();
     
-    public PolymorphismNGTest() {
+    public LSPViolationNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-  
-    @Test
-     public void polyTest() {   
-     
-        Assert.assertEquals("Mikhail", service.getDoctor());
+     @Test
+     public void surgeoryPatient() {
+         
+         pList.add(new Doctor());
+         pList.add(new Nurse());
+         
+         for (Staff s : pList){
+             
+             Assert.assertEquals(s.surgeory(), "Clark");
+         }
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-        
-        ctx = new AnnotationConfigApplicationContext(AppConfig.class);
-        service = (DoctorService)ctx.getBean("poly");
     }
 
     @AfterClass

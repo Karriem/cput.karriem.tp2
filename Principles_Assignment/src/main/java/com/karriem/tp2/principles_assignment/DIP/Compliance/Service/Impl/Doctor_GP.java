@@ -4,13 +4,16 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.principles_assignment.DIP.Compliance;
+package com.karriem.tp2.principles_assignment.DIP.Compliance.Service.Impl;
 
+import com.karriem.tp2.principles_assignment.DIP.Compliance.Service.HospitalService;
 import com.karriem.tp2.principles_assignment.DoctorList;
 import com.karriem.tp2.principles_assignment.Model.Doctor;
 import com.karriem.tp2.principles_assignment.Model.Patients;
 import com.karriem.tp2.principles_assignment.Model.TreatmentList;
 import com.karriem.tp2.principles_assignment.PatientList;
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,32 +21,28 @@ import java.util.List;
  *
  * @author karriem
  */
-public class Doctor_Surgeon implements HospitalService{
+public class Doctor_GP implements HospitalService{
     
     private List<TreatmentList> treatList = new ArrayList<TreatmentList>();
+    private DoctorList dList = new DoctorList();
+    private PatientList pList = new PatientList();  
     
-    private PatientList pat = new PatientList();
-    private DoctorList doc = new DoctorList();
-    private TreatmentList treat = new TreatmentList();
-    
-
+    @Override
     public List<TreatmentList> treatPatient(){
-        
-        pat.addPatients();
-        doc.addDoctors();
-        
-        for (Patients patient : pat.addPatients()){
+             
+        for (Patients patient : pList.addPatients()){
             
-            if (patient.getTreatmentRisk().equalsIgnoreCase("High Risk")){
+            if (patient.getTreatmentRisk().equalsIgnoreCase("Low Risk") || patient.getTreatmentRisk().equalsIgnoreCase("No Risk")){
                 
-                for (Doctor doctor : doc.addDoctors()){
+                for (Doctor doctor : dList.addDoctors()){
                     
-                    if (doctor.getSpeciality().equalsIgnoreCase("General Surgeon")){
+                    if (doctor.getSpeciality().equalsIgnoreCase("General Practitioner")){
                         
                         TreatmentList treat = new TreatmentList();
+                        
                         treat.setDoctor_ID(doctor.getDoctor_ID());
                         treat.setPatient_ID(patient.getPatientID());
-                        
+
                         treatList.add(treat);
                     }
                 }                

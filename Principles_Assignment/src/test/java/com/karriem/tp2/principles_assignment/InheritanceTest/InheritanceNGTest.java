@@ -4,9 +4,14 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.principles_assignment.DIP.Violation;
+package com.karriem.tp2.principles_assignment.InheritanceTest;
 
+import com.karriem.tp2.principles_assignment.Inheritance.Config.AppConfig;
+import com.karriem.tp2.principles_assignment.Inheritance.Service.PatientRecordService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.testng.Assert;
+import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -17,26 +22,28 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class DIPViolationNGTest {
+public class InheritanceNGTest {
+   
+    private static ApplicationContext ctx;
+    private static PatientRecordService service;
     
-    private Hospital hos = new Hospital();
-    
-    public DIPViolationNGTest() {
+    public InheritanceNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void getDocPatList() {
+     public void getRecord() {
      
-         Assert.assertEquals(hos.getToTreating().get(0).getDoctor_ID(), "D4");
-         Assert.assertEquals(hos.getToTreating().get(0).getPatient_ID(), "1000A");
+         Assert.assertEquals(service.patientRec(), "Bruce");
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-       
+        
+        ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        service = (PatientRecordService)ctx.getBean("pat");
     }
 
     @AfterClass

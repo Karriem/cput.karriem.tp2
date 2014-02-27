@@ -4,9 +4,15 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.principles_assignment.DIP.Compliance;
+package com.karriem.tp2.principles_assignment.LSPTest.Compliance;
 
-import org.testng.Assert;
+import com.karriem.tp2.principles_assignment.LSP.Compliance.Service.Impl.Doctor;
+import com.karriem.tp2.principles_assignment.LSP.Compliance.Service.Impl.Nurse;
+import com.karriem.tp2.principles_assignment.LSP.Compliance.Service.Staff;
+import java.util.ArrayList;
+import java.util.List;
+import junit.framework.Assert;
+import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -17,26 +23,30 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class DIPComplianceNGTest {
+public class LSPComplianceNGTest {
+        
+    private List<Staff> staffList = new ArrayList<Staff>();
     
-    private Doctor_GP doc = new Doctor_GP();
-    
-    public DIPComplianceNGTest() {
+    public LSPComplianceNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void getDocPatList() {
-     
-         Assert.assertEquals(doc.treatPatient().get(0).getDoctor_ID(), "D4");
-         Assert.assertEquals(doc.treatPatient().get(0).getPatient_ID(), "1000A");
+     public void getStaffPatient() {
+         
+         staffList.add(new Doctor());
+         staffList.add(new Nurse());
+         
+         for (Staff s : staffList){
+             
+             Assert.assertEquals(s.treatPatient(), "Bruce");
+         }
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-       
     }
 
     @AfterClass

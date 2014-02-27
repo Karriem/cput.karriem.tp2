@@ -4,12 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.principles_assignment.Polymorphism;
+package com.karriem.tp2.principles_assignment.DIPTest.Compliance;
 
-
-import com.karriem.tp2.principles_assignment.Polymorphism.Config.AppConfig;
-import com.karriem.tp2.principles_assignment.Polymorphism.Service.DoctorService;
-import com.karriem.tp2.principles_assignment.Polymorphism.Service.Impl.DoctorServiceImpl;
+import com.karriem.tp2.principles_assignment.DIP.Compliance.Service.Config.AppConfig;
+import com.karriem.tp2.principles_assignment.DIP.Compliance.Service.HospitalService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.testng.Assert;
@@ -23,29 +21,30 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class PolymorphismNGTest {
-    
+public class DIPComplianceNGTest {
+    private static HospitalService service;
     private static ApplicationContext ctx;
-    private static DoctorService service;
+ 
+//    private Doctor_GP doc = new Doctor_GP();
     
-    public PolymorphismNGTest() {
+    public DIPComplianceNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-  
-    @Test
-     public void polyTest() {   
+     @Test
+     public void getDocPatList() {
      
-        Assert.assertEquals("Mikhail", service.getDoctor());
+         Assert.assertEquals(service.treatPatient().get(0).getDoctor_ID(), "D4");
+         Assert.assertEquals(service.treatPatient().get(0).getPatient_ID(), "1000A");
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-        
+       
         ctx = new AnnotationConfigApplicationContext(AppConfig.class);
-        service = (DoctorService)ctx.getBean("poly");
+        service = (HospitalService)ctx.getBean("doc");
     }
 
     @AfterClass

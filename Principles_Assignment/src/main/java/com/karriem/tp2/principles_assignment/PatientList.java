@@ -16,9 +16,11 @@ import java.util.List;
  */
 public class PatientList {
     
-    private List<Patients> patList = new ArrayList<Patients>();
+//    private List<Patients> patList = new ArrayList<Patients>();
     
     public List<Patients> addPatients(){
+        
+        List<Patients> patList = new ArrayList<Patients>();
         
         Patients patient1 = new Patients();
         Patients patient2 = new Patients();
