@@ -10,7 +10,7 @@ package com.karriem.tp2.principles_assignment.Model;
  *
  * @author karriem
  */
-public class Doctor {
+public class Doctors {
     
     private String doctor_ID;
     private String speciality;

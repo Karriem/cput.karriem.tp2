@@ -7,7 +7,7 @@
 package com.karriem.tp2.principles_assignment.DIP.Violation;
 
 import com.karriem.tp2.principles_assignment.DoctorList;
-import com.karriem.tp2.principles_assignment.Model.Doctor;
+import com.karriem.tp2.principles_assignment.Model.Doctors;
 import com.karriem.tp2.principles_assignment.Model.Patients;
 import com.karriem.tp2.principles_assignment.Model.TreatmentList;
 import com.karriem.tp2.principles_assignment.PatientList;
@@ -35,7 +35,7 @@ public class Doctor_Surgeon {
             
             if (patient.getTreatmentRisk().equalsIgnoreCase("High Risk")){
                 
-                for (Doctor doctor : doc.addDoctors()){
+                for (Doctors doctor : doc.addDoctors()){
                     
                     if (doctor.getSpeciality().equalsIgnoreCase("General Surgeon")){
                         

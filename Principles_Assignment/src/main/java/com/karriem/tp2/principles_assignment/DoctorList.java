@@ -6,7 +6,7 @@
 
 package com.karriem.tp2.principles_assignment;
 
-import com.karriem.tp2.principles_assignment.Model.Doctor;
+import com.karriem.tp2.principles_assignment.Model.Doctors;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,15 +16,15 @@ import java.util.List;
  */
 public class DoctorList {
     
-    private List<Doctor> docList = new ArrayList<Doctor>();
+    private List<Doctors> docList = new ArrayList<Doctors>();
     
-    public List<Doctor> addDoctors(){
+    public List<Doctors> addDoctors(){
         
-        Doctor doc1 = new Doctor();
-        Doctor doc2 = new Doctor();
-        Doctor doc3 = new Doctor();
-        Doctor doc4 = new Doctor();
-        Doctor doc5 = new Doctor();
+        Doctors doc1 = new Doctors();
+        Doctors doc2 = new Doctors();
+        Doctors doc3 = new Doctors();
+        Doctors doc4 = new Doctors();
+        Doctors doc5 = new Doctors();
         
         doc1.setDoctor_ID("D1");
         doc1.setFirst_Name("Karriem");

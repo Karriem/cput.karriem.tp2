@@ -7,7 +7,7 @@
 package com.karriem.tp2.principles_assignment.Polymorphism.Service.Impl;
 
 import com.karriem.tp2.principles_assignment.DoctorList;
-import com.karriem.tp2.principles_assignment.Model.Doctor;
+import com.karriem.tp2.principles_assignment.Model.Doctors;
 
 /**
  *
@@ -22,7 +22,7 @@ public class GeneralDoctor extends DoctorServiceImpl{
         
         DoctorList docList = new DoctorList();
         
-        for (Doctor doc : docList.addDoctors()){
+        for (Doctors doc : docList.addDoctors()){
    
             if (doc.getSpeciality().equalsIgnoreCase("General Practitioner")){
                 

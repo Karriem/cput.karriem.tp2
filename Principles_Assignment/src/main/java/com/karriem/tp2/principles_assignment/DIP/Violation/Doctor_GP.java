@@ -7,7 +7,7 @@
 package com.karriem.tp2.principles_assignment.DIP.Violation;
 
 import com.karriem.tp2.principles_assignment.DoctorList;
-import com.karriem.tp2.principles_assignment.Model.Doctor;
+import com.karriem.tp2.principles_assignment.Model.Doctors;
 import com.karriem.tp2.principles_assignment.Model.Patients;
 import com.karriem.tp2.principles_assignment.Model.TreatmentList;
 import com.karriem.tp2.principles_assignment.PatientList;
@@ -21,7 +21,7 @@ import java.util.List;
 public class Doctor_GP {
     
     private List<Patients> patList = new ArrayList<Patients>(); 
-    private List<Doctor> docList = new ArrayList<Doctor>();
+    private List<Doctors> docList = new ArrayList<Doctors>();
     private List<TreatmentList> treatList = new ArrayList<TreatmentList>();
     
     private PatientList pat = new PatientList();
@@ -36,7 +36,7 @@ public class Doctor_GP {
             
             if (patient.getTreatmentRisk().equalsIgnoreCase("Low Risk") || patient.getTreatmentRisk().equalsIgnoreCase("No Risk")){
                 
-                for (Doctor doctor : docList){
+                for (Doctors doctor : docList){
                     
                     if (doctor.getSpeciality().equalsIgnoreCase("General Practitioner")){
                         
