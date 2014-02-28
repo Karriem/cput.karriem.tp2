@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.principles_assignment.Model;
 
+import java.util.List;
+
 /**
  *
  * @author karriem
@@ -18,6 +20,15 @@ public class Patients {
     private int age;
     private String gender;
     private String treatmentRisk;
+    private List<String> staffAssign;
+
+    public List<String> getStaffAssign() {
+        return staffAssign;
+    }
+
+    public void setStaffAssign(List<String> staffAssign) {
+        this.staffAssign = staffAssign;
+    }
 
     public String getTreatmentRisk() {
         return treatmentRisk;
