@@ -15,7 +15,7 @@ public final class Medicine {
     private static String id;
     private static String medID;
     private static String medDescription;
-    private static String quantity;
+    private static int quantity;
     
     public Medicine(Builder builder){
         
@@ -37,7 +37,7 @@ public final class Medicine {
         return medDescription;
     }
 
-    public static String getQuantity() {
+    public static int getQuantity() {
         return quantity;
     }
     
@@ -46,7 +46,7 @@ public final class Medicine {
         private String id;
         private String medID;
         private String medDescription;
-        private String quantity;
+        private int quantity;
         
         public Builder id(String val){
             
@@ -69,7 +69,7 @@ public final class Medicine {
             return this;
         }
         
-        public Builder quantity(String val){
+        public Builder quantity(int val){
             
             this.quantity = val;
             

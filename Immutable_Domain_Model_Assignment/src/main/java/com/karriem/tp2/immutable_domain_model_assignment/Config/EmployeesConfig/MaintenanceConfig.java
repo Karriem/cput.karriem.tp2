@@ -6,22 +6,21 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.EmployeesConfig;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Service.EmployeesService.DoctorService;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.EmployeesServiceImpl.DoctorServiceImpl;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.EmployeesService.MaintenanceService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.EmployeesServiceImpl.MaintenanceServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 
 /**
  *
  * @author karriem
  */
 @Configuration
-public class DoctorConfig {
+public class MaintenanceConfig {
     
-    @Bean (name = "createDoc")    
-    public DoctorService getDoctor(){
+    @Bean (name = "main")
+    public MaintenanceService getMain(){
         
-        return new DoctorServiceImpl();
+        return new MaintenanceServiceImpl();
     }
 }
