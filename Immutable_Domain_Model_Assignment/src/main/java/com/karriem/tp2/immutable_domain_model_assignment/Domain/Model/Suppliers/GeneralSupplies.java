@@ -18,7 +18,7 @@ public final class GeneralSupplies {
     private static String equipmentID;
     private static String description;
     private static String date;
-    private static String amt;
+    private static int amt;
     private static int cost;
     
     public GeneralSupplies(Builder builder){
@@ -57,7 +57,7 @@ public final class GeneralSupplies {
         return date;
     }
 
-    public static String getAmt() {
+    public static int getAmt() {
         return amt;
     }
 
@@ -72,7 +72,7 @@ public final class GeneralSupplies {
         private String equipmentID;
         private String description;
         private String date;
-        private String amt;
+        private int amt;
         private int cost;
         private String suppliersName;
         
@@ -111,7 +111,7 @@ public final class GeneralSupplies {
             return this;
         }
         
-        public Builder amt(String val){
+        public Builder amt(int val){
             
             this.amt = val;
             

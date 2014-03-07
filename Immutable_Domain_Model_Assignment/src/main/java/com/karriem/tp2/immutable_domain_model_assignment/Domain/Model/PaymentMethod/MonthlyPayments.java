@@ -17,6 +17,7 @@ public final class MonthlyPayments {
     private static int treatmentCost;
     private static int monthlyInstallments;
     private static String patientID;
+    private static int months;
 
     public MonthlyPayments(Builder builder){
         
@@ -25,6 +26,11 @@ public final class MonthlyPayments {
         treatmentCost = builder.treatmentCost;
         monthlyInstallments = builder.monthlyInstallments;
         patientID = builder.patientID;
+        months = builder.months;
+    }
+
+    public static int getMonths() {
+        return months;
     }
 
     public static String getId() {
@@ -54,6 +60,7 @@ public final class MonthlyPayments {
         private int treatmentCost;
         private int monthlyInstallments;
         private String patientID;
+        private int months;
         
         public Builder id(String val){
             
@@ -90,6 +97,13 @@ public final class MonthlyPayments {
             return this;
         }
         
+        public Builder months(int val){
+            
+            this.months = val;
+            
+            return this;
+        }
+        
         public MonthlyPayments build(){
             
             return new MonthlyPayments(this);
@@ -102,6 +116,7 @@ public final class MonthlyPayments {
             this.treatmentCost = mp.getTreatmentCost();
             this.monthlyInstallments = mp.getMonthlyInstallments();
             this.patientID = mp.getPatientID();
+            this.months = mp.getMonths();
             
             return this;
         } 
