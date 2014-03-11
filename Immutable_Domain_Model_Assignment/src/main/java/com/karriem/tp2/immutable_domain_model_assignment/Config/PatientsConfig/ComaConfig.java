@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.PatientsConfig;
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.PatientsCrud.ComaCrudService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.PatientsCrud.Impl.ComaCrudServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.PatientsServcieImpl.ComaServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.PatientsService.ComaService;
 import org.springframework.context.annotation.Bean;
@@ -22,5 +24,11 @@ public class ComaConfig {
     public ComaService getComa(){
         
         return new ComaServiceImpl();
+    }
+    
+    @Bean (name = "comaCrud")
+    public ComaCrudService getComaCrud(){
+        
+        return new ComaCrudServiceImpl();
     }
 }

@@ -7,7 +7,7 @@
 package com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.EquipmentServiceImpl;
 
 import com.karriem.tp2.immutable_domain_model_assignment.Domain.Model.Equipment.GeneralEquipment;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService.GeneralService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService.GeneralEquipmentService;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author karriem
  */
-public class GeneralServiceImpl implements GeneralService{
+public class GeneralServiceImpl implements GeneralEquipmentService{
 
     private List<GeneralEquipment> equipList = new ArrayList<GeneralEquipment>();
     

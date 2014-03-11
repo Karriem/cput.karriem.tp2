@@ -7,8 +7,10 @@
 package com.karriem.tp2.immutable_domain_model_assignment.Config.TreatmentConfig;
 
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.TreatmentCrud.ComaTreatmentCrudService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.TreatmentCrud.Impl.ComaTreatmentCrudServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.TreatmentServiceImpl.ComaServiceImpl;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.TreatmentService.ComaService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.TreatmentService.ComaTreatmentService;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,8 +23,14 @@ import org.springframework.context.annotation.Configuration;
 public class ComaTreatmentConfig {
     
     @Bean (name ="comaT")
-    public ComaService getComa(){
+    public ComaTreatmentService getComa(){
         
         return new ComaServiceImpl();
+    }
+    
+    @Bean (name = "comaCrud")
+    public ComaTreatmentCrudService getComaTreatCrud(){
+        
+        return new ComaTreatmentCrudServiceImpl();
     }
 }

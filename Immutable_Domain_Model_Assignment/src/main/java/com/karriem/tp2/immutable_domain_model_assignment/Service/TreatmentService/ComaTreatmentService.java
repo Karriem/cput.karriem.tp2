@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author karriem
  */
-public interface ComaService {
+public interface ComaTreatmentService {
  
     public List<ComaTreatment> createComa(); 
     public List<ComaTreatment> createNewComa();

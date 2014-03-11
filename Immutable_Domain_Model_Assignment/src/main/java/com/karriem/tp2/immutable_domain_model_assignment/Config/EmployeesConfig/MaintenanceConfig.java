@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.EmployeesConfig;
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.EmployeesCrud.Impl.MaintenanceCrudServiceImpl;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.EmployeesCrud.MaintenanceCrudService;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.EmployeesService.MaintenanceService;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.EmployeesServiceImpl.MaintenanceServiceImpl;
 import org.springframework.context.annotation.Bean;
@@ -22,5 +24,11 @@ public class MaintenanceConfig {
     public MaintenanceService getMain(){
         
         return new MaintenanceServiceImpl();
+    }
+    
+    @Bean (name = "mainCrud")
+    public MaintenanceCrudService getMainCrud(){
+        
+        return new MaintenanceCrudServiceImpl();
     }
 }

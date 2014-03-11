@@ -4,17 +4,15 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService;
+package com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.EquipmentCrud;
 
+import com.karriem.tp2.immutable_domain_model_assignment.CrudService;
 import com.karriem.tp2.immutable_domain_model_assignment.Domain.Model.Equipment.MedicalEquipment;
-import java.util.List;
 
 /**
  *
  * @author karriem
  */
-public interface MedicalService {
+public interface MedicalEquipmentCrudService extends CrudService<MedicalEquipment, String>{
     
-    public List<MedicalEquipment> createMedicalEquipment(); 
-    public List<MedicalEquipment> createNewMedicalEquipment();
 }

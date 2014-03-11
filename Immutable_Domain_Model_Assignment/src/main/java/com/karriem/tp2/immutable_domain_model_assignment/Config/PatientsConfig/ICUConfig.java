@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.PatientsConfig;
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.PatientsCrud.ICUCrudService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.PatientsCrud.Impl.ICUCrudServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.PatientsServcieImpl.ICUServcieImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.PatientsService.ICUService;
 import org.springframework.context.annotation.Bean;
@@ -22,5 +24,11 @@ public class ICUConfig {
     public ICUService getICU(){
         
         return new ICUServcieImpl();
+    }
+    
+    @Bean (name = "ICUCrud")
+    public ICUCrudService getICUCrud(){
+        
+        return new ICUCrudServiceImpl();
     }
 }

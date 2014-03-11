@@ -7,7 +7,7 @@
 package com.karriem.tp2.immutable_domain_model_assignment.EquipmentTest;
 
 import com.karriem.tp2.immutable_domain_model_assignment.Config.EquipmentConfig.GeneralConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService.GeneralService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService.GeneralEquipmentService;
 import org.junit.Assert;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -25,7 +25,7 @@ import org.testng.annotations.Test;
 public class GeneralEquipmentNGTest {
     
     private static ApplicationContext ctx;
-    private static GeneralService service;
+    private static GeneralEquipmentService service;
     
     public GeneralEquipmentNGTest() {
     }
@@ -49,7 +49,7 @@ public class GeneralEquipmentNGTest {
     public static void setUpClass() throws Exception {
         
         ctx = new AnnotationConfigApplicationContext(GeneralConfig.class);
-        service = (GeneralService)ctx.getBean("genEquip");
+        service = (GeneralEquipmentService)ctx.getBean("genEquip");
     }
 
     @AfterClass

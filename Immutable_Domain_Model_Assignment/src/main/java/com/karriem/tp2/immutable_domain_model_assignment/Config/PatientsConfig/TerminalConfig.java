@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.PatientsConfig;
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.PatientsCrud.Impl.TerminalCrudServiceImpl;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.PatientsCrud.TerminalCrudService;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.PatientsServcieImpl.TerminalServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.PatientsService.TerminalService;
 import org.springframework.context.annotation.Bean;
@@ -22,5 +24,11 @@ public class TerminalConfig {
     public TerminalService getTerminal(){
         
         return new TerminalServiceImpl();
+    }
+    
+    @Bean (name = "terminalCrud")
+    public TerminalCrudService getTerminalCrud(){
+        
+        return new TerminalCrudServiceImpl();
     }
 }

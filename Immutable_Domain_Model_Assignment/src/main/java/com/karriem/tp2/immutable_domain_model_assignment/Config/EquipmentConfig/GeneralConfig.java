@@ -6,7 +6,9 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.EquipmentConfig;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService.GeneralService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.EquipmentCrud.GeneralEquipmentCrudService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.EquipmentCrud.Impl.GeneralEquipmentCrudServiceImpl;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService.GeneralEquipmentService;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.EquipmentServiceImpl.GeneralServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,8 +21,14 @@ import org.springframework.context.annotation.Configuration;
 public class GeneralConfig {
     
     @Bean (name = "genEquip")
-    public GeneralService getGenEquip(){
+    public GeneralEquipmentService getGenEquip(){
         
         return new GeneralServiceImpl();
+    }
+    
+    @Bean (name = "generalEquipCrud")
+    public GeneralEquipmentCrudService getEquipCrud(){
+        
+        return new GeneralEquipmentCrudServiceImpl();
     }
 }

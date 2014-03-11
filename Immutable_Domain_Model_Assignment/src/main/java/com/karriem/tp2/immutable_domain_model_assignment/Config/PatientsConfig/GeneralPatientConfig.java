@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.PatientsConfig;
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.PatientsCrud.GeneralPatientCrudService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.PatientsCrud.Impl.GeneralPatientCrudServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.PatientsServcieImpl.GeneralPatientServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.PatientsService.GeneralPatientService;
 import org.springframework.context.annotation.Bean;
@@ -22,5 +24,11 @@ public class GeneralPatientConfig {
     public GeneralPatientService getGen(){
         
         return new GeneralPatientServiceImpl();
+    }
+    
+    @Bean (name = "generalPatCrud")
+    public GeneralPatientCrudService getGeneralCrud(){
+        
+        return new GeneralPatientCrudServiceImpl();
     }
 }

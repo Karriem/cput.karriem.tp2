@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.PaymentMethodConfig;
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.PaymentMethodCrud.CreditCardCrudService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.PaymentMethodCrud.Impl.CreditCardCrudServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.PaymentMethodServiceImpl.CreditCardServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.PaymentMethodService.CreditCardService;
 import org.springframework.context.annotation.Bean;
@@ -22,5 +24,11 @@ public class CreditCardConfig {
     public CreditCardService getCredit(){
         
         return new CreditCardServiceImpl();
+    }
+    
+    @Bean (name = "creditCrud")
+    public CreditCardCrudService getCreditCardCrud(){
+        
+        return new CreditCardCrudServiceImpl();
     }
 }

@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.EmployeesConfig;
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.EmployeesCrud.CleaningStaffCrudService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.EmployeesCrud.Impl.CleaningStaffCrudServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.EmployeesService.CleaningStaffService;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.EmployeesServiceImpl.CleaningStaffServiceImpl;
 import org.springframework.context.annotation.Bean;
@@ -22,5 +24,11 @@ public class CleaningStaffConfig {
     public CleaningStaffService getCleaner(){
         
        return new CleaningStaffServiceImpl();
+    }
+    
+    @Bean (name = "CleanCrud")
+    public CleaningStaffCrudService getCleanCrud(){
+        
+        return new CleaningStaffCrudServiceImpl();
     }
 }

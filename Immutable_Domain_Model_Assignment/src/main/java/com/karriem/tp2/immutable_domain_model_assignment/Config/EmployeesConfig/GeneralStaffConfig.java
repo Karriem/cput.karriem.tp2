@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.EmployeesConfig;
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.EmployeesCrud.GeneralStaffCrudService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.EmployeesCrud.Impl.GeneralStaffCrudServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.EmployeesService.GeneralStaffService;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.EmployeesServiceImpl.GeneralStaffServiceImpl;
 import org.springframework.context.annotation.Bean;
@@ -22,5 +24,11 @@ public class GeneralStaffConfig {
     public GeneralStaffService getGeneralStaff(){
         
         return new GeneralStaffServiceImpl();
+    }
+    
+    @Bean (name = "generalCrud")
+    public GeneralStaffCrudService getGeneralStaffCrud(){
+        
+        return new GeneralStaffCrudServiceImpl();
     }
 }

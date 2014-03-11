@@ -8,7 +8,7 @@ package com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.Treatment
 
 import com.karriem.tp2.immutable_domain_model_assignment.Domain.Model.Patients.ComaPatients;
 import com.karriem.tp2.immutable_domain_model_assignment.Domain.Model.Treatment.ComaTreatment;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.TreatmentService.ComaService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.TreatmentService.ComaTreatmentService;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +16,7 @@ import java.util.List;
  *
  * @author karriem
  */
-public class ComaServiceImpl implements ComaService{
+public class ComaServiceImpl implements ComaTreatmentService{
 
     List<ComaTreatment> comaList = new ArrayList<ComaTreatment>();
 

@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.MedicalAidConfig;
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.MedicalAidCrud.Impl.MedicalAidCrudServiceImpl;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.MedicalAidCrud.MedicalAidCrudService;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.MedicalAidServiceImpl.MedicalAidServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.MedicalAidService.MedicalAidService;
 import org.springframework.context.annotation.Bean;
@@ -22,5 +24,11 @@ public class MedicalAidConfig {
     public MedicalAidService getMedicalAid(){
         
         return new MedicalAidServiceImpl();
+    }
+    
+    @Bean (name = "medicalAidCrud")
+    public MedicalAidCrudService getMedicalAidCrud(){
+        
+        return new MedicalAidCrudServiceImpl();
     }
 }

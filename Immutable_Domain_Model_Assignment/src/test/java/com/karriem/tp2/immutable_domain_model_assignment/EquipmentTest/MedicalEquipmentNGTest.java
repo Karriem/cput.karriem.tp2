@@ -7,7 +7,7 @@
 package com.karriem.tp2.immutable_domain_model_assignment.EquipmentTest;
 
 import com.karriem.tp2.immutable_domain_model_assignment.Config.EquipmentConfig.MedicalConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService.MedicalService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService.MedicalEquipmentService;
 import junit.framework.Assert;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -25,7 +25,7 @@ import org.testng.annotations.Test;
 public class MedicalEquipmentNGTest {
     
     private static ApplicationContext ctx;
-    private static MedicalService service;
+    private static MedicalEquipmentService service;
     
     public MedicalEquipmentNGTest() {
     }
@@ -49,7 +49,7 @@ public class MedicalEquipmentNGTest {
     public static void setUpClass() throws Exception {
         
         ctx = new AnnotationConfigApplicationContext(MedicalConfig.class);
-        service = (MedicalService)ctx.getBean("med");
+        service = (MedicalEquipmentService)ctx.getBean("med");
     }
 
     @AfterClass

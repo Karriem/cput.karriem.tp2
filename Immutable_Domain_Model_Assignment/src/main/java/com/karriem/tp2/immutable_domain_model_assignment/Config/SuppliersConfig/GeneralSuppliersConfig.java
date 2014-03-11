@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.SuppliersConfig;
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.SuppliersCrud.GeneralSuppliersCrudService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.SuppliersCrud.Impl.GeneralSuppliersCrudServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.SuppliersServiceImpl.GeneralSuppliersServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.SuppliersService.GeneralSuppliersService;
 import org.springframework.context.annotation.Bean;
@@ -22,5 +24,10 @@ public class GeneralSuppliersConfig {
     public GeneralSuppliersService getGenSup(){
         
         return new GeneralSuppliersServiceImpl();
+    }
+    
+    public GeneralSuppliersCrudService getGenSuppliersCrud(){
+        
+        return new GeneralSuppliersCrudServiceImpl();
     }
 }

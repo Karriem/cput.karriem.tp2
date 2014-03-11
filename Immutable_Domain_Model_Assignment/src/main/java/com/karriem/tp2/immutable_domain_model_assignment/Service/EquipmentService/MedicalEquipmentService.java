@@ -6,15 +6,15 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Domain.Model.Equipment.GeneralEquipment;
+import com.karriem.tp2.immutable_domain_model_assignment.Domain.Model.Equipment.MedicalEquipment;
 import java.util.List;
 
 /**
  *
  * @author karriem
  */
-public interface GeneralService {
+public interface MedicalEquipmentService {
     
-    public List<GeneralEquipment> createEquipment(); 
-    public List<GeneralEquipment> createNewEquipment();
+    public List<MedicalEquipment> createMedicalEquipment(); 
+    public List<MedicalEquipment> createNewMedicalEquipment();
 }

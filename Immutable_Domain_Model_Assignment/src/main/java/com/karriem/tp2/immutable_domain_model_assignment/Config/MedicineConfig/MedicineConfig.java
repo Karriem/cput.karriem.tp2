@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.MedicineConfig;
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.MedicineCrud.Impl.MedicineCrudServiceImpl;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.MedicineCrud.MedicineCrudService;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.MedicineServiceImpl.MedicineServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.MedicineService.MedicineService;
 import org.springframework.context.annotation.Bean;
@@ -22,5 +24,11 @@ public class MedicineConfig {
     public MedicineService getmed(){
         
         return new MedicineServiceImpl();
+    }
+    
+    @Bean (name = "MedicineCrud")
+    public MedicineCrudService getMedicineCrud(){
+        
+        return new MedicineCrudServiceImpl();
     }
 }

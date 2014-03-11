@@ -8,7 +8,7 @@ package com.karriem.tp2.immutable_domain_model_assignment.TreatmentTest;
 
 
 import com.karriem.tp2.immutable_domain_model_assignment.Config.TreatmentConfig.ComaTreatmentConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.TreatmentService.ComaService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.TreatmentService.ComaTreatmentService;
 
 import org.junit.Assert;
 import org.springframework.context.ApplicationContext;
@@ -27,7 +27,7 @@ import org.testng.annotations.Test;
 public class ComaNGTest {
     
     private static ApplicationContext ctx;
-    private static ComaService service;
+    private static ComaTreatmentService service;
     
     public ComaNGTest() {
     }
@@ -51,7 +51,7 @@ public class ComaNGTest {
     public static void setUpClass() throws Exception {
         
         ctx = new AnnotationConfigApplicationContext(ComaTreatmentConfig.class);
-        service = (ComaService)ctx.getBean("comaT");
+        service = (ComaTreatmentService)ctx.getBean("comaT");
     }
 
     @AfterClass

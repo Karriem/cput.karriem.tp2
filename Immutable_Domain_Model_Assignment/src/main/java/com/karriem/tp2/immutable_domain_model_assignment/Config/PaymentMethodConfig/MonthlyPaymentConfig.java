@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.PaymentMethodConfig;
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.PaymentMethodCrud.Impl.MonthlyPaymentCrudServiceImpl;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.PaymentMethodCrud.MonthlyPaymentCrudService;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.PaymentMethodServiceImpl.MonthlyPaymentServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.PaymentMethodService.MonthlyPaymentService;
 import org.springframework.context.annotation.Bean;
@@ -22,5 +24,11 @@ public class MonthlyPaymentConfig {
     public MonthlyPaymentService getMonthly(){
         
         return new MonthlyPaymentServiceImpl();
+    }
+    
+    @Bean (name = "monthlyCrud")
+    public MonthlyPaymentCrudService getMonthlyCrud(){
+        
+        return new MonthlyPaymentCrudServiceImpl();
     }
 }

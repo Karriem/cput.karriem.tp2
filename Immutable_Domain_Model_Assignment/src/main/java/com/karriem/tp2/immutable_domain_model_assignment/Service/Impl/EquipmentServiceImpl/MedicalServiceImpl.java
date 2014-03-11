@@ -7,7 +7,7 @@
 package com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.EquipmentServiceImpl;
 
 import com.karriem.tp2.immutable_domain_model_assignment.Domain.Model.Equipment.MedicalEquipment;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService.MedicalService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService.MedicalEquipmentService;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author karriem
  */
-public class MedicalServiceImpl implements MedicalService{
+public class MedicalServiceImpl implements MedicalEquipmentService{
 
     private List<MedicalEquipment> medList = new ArrayList<MedicalEquipment>();
     

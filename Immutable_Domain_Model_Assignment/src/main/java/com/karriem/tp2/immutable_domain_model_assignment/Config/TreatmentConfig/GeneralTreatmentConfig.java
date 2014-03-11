@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.TreatmentConfig;
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.TreatmentCrud.GeneralTreatmentCrudService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.TreatmentCrud.Impl.GeneralTreatmentCrudServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.TreatmentServiceImpl.GeneralTreatmentServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.TreatmentService.GeneralTreatmentService;
 import org.springframework.context.annotation.Bean;
@@ -22,5 +24,11 @@ public class GeneralTreatmentConfig {
     public GeneralTreatmentService getGeneral(){
         
         return new GeneralTreatmentServiceImpl();
+    }
+    
+    @Bean (name = "generalTreatmentCrud")
+    public GeneralTreatmentCrudService getGeneralTreatCrud(){
+        
+        return new GeneralTreatmentCrudServiceImpl();
     }
 }

@@ -6,7 +6,9 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.EquipmentConfig;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService.MedicalService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.EquipmentCrud.Impl.MedicalEquipmentCrudServiceImpl;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.EquipmentCrud.MedicalEquipmentCrudService;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService.MedicalEquipmentService;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.EquipmentServiceImpl.MedicalServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,8 +21,14 @@ import org.springframework.context.annotation.Configuration;
 public class MedicalConfig {
     
     @Bean (name = "med")
-    public MedicalService getMedical(){
+    public MedicalEquipmentService getMedical(){
         
         return new MedicalServiceImpl();
+    }
+    
+    @Bean (name = "medicalEquipCrud")
+    public MedicalEquipmentCrudService getMedicalCrud(){
+        
+        return new MedicalEquipmentCrudServiceImpl();
     }
 }

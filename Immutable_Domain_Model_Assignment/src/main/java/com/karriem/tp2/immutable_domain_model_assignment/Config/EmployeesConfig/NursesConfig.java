@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.EmployeesConfig;
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.EmployeesCrud.Impl.NursesCrudServiceImpl;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.EmployeesCrud.NursesCrudService;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.EmployeesService.NursesService;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.EmployeesServiceImpl.NursesServiceImpl;
 import org.springframework.context.annotation.Bean;
@@ -22,5 +24,11 @@ public class NursesConfig {
     public NursesService getNurse(){
         
         return new NursesServiceImpl();
+    }
+    
+    @Bean (name = "nurseCrud")
+    public NursesCrudService getNurseCrud(){
+        
+        return new NursesCrudServiceImpl();
     }
 }

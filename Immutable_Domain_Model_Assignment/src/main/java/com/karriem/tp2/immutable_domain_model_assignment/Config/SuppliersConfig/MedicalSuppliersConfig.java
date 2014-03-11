@@ -6,6 +6,8 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Config.SuppliersConfig;
 
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.SuppliersCrud.Impl.MedicalSuppliersCrudServiceImpl;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.SuppliersCrud.MedicalSuppliersCrudService;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Impl.SuppliersServiceImpl.MedicalSuppliersServiceImpl;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.SuppliersService.MedicalSuppliersService;
 import org.springframework.context.annotation.Bean;
@@ -22,5 +24,11 @@ public class MedicalSuppliersConfig {
     public MedicalSuppliersService getMedSup(){
         
         return new MedicalSuppliersServiceImpl();
+    }
+    
+    @Bean (name = "medicalSuppliersCrud")
+    public MedicalSuppliersCrudService getMedicalSuppliersCrud(){
+        
+        return new MedicalSuppliersCrudServiceImpl();
     }
 }
