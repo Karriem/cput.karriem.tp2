@@ -6,7 +6,7 @@
 
 package com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.TreatmentCrud.Impl;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Domain.Model.Treatment.ComaTreatment;
+import com.karriem.tp2.immutable_domain_model_assignment.Domain.Model.Treatment.GeneralTreatments;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.TreatmentCrud.GeneralTreatmentCrudService;
 import java.util.List;
 import org.springframework.transaction.annotation.Propagation;
@@ -20,35 +20,35 @@ public class GeneralTreatmentCrudServiceImpl implements GeneralTreatmentCrudServ
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
-    public ComaTreatment find(String id) {
+    public GeneralTreatments find(String id) {
         
         return null;
     }
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
-    public ComaTreatment persist(ComaTreatment entity) {
+    public GeneralTreatments persist(GeneralTreatments entity) {
         
         return null;
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW)
-    public ComaTreatment merge(ComaTreatment entity) {
+    public GeneralTreatments merge(GeneralTreatments entity) {
         
         return null;
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public ComaTreatment remove(ComaTreatment entity) {
+    public GeneralTreatments remove(GeneralTreatments entity) {
         
         return null;
     }
 
     @Override
     @Transactional(propagation = Propagation.NOT_SUPPORTED)
-    public List<ComaTreatment> findAll() {
+    public List<GeneralTreatments> findAll() {
         
         return null;
     }

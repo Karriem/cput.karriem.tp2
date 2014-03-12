@@ -7,12 +7,12 @@
 package com.karriem.tp2.immutable_domain_model_assignment.Service.Crud.TreatmentCrud;
 
 import com.karriem.tp2.immutable_domain_model_assignment.CrudService;
-import com.karriem.tp2.immutable_domain_model_assignment.Domain.Model.Treatment.ComaTreatment;
+import com.karriem.tp2.immutable_domain_model_assignment.Domain.Model.Treatment.GeneralTreatments;
 
 /**
  *
  * @author karriem
  */
-public interface GeneralTreatmentCrudService extends CrudService<ComaTreatment, String>{
+public interface GeneralTreatmentCrudService extends CrudService<GeneralTreatments, String>{
     
 }
