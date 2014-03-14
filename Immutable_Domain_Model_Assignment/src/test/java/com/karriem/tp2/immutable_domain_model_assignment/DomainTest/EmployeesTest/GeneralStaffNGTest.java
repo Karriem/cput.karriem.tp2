@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.PatientsTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.EmployeesTest;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Config.PatientsConfig.ICUConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.PatientsService.ICUService;
+import com.karriem.tp2.immutable_domain_model_assignment.Config.EmployeesConfig.GeneralStaffConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.EmployeesService.GeneralStaffService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.testng.Assert;
@@ -22,34 +22,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class ICUNGTest {
+public class GeneralStaffNGTest {
     
     private static ApplicationContext ctx;
-    private static ICUService service;
+    private static GeneralStaffService service;
     
-    public ICUNGTest() {
+    public GeneralStaffNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
-    
+    //
      @Test
-     public void createICU() {
-     
-         Assert.assertEquals(service.createICU().get(0).getFirstName(), "Jack");
+     public void createGeneral() {
+         
+         Assert.assertEquals(service.createGeneralStaff().get(0).getGenID(), "G1001");
      }
      
      @Test
-     public void updateICU() {
-     
-         Assert.assertEquals(service.createNewICU().get(0).getFirstName(), "Garrus");
+     public void updateGeneral(){
+         
+         Assert.assertEquals(service.createNewGeneralStaff().get(0).getGenID(), "G1002");
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(ICUConfig.class);
-        service = (ICUService)ctx.getBean("ICU");
+        ctx = new AnnotationConfigApplicationContext(GeneralStaffConfig.class);
+        service = (GeneralStaffService)ctx.getBean("gen");
     }
 
     @AfterClass

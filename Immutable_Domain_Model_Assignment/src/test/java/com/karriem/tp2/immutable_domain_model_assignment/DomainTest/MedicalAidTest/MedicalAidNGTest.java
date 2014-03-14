@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.EquipmentTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.MedicalAidTest;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Config.EquipmentConfig.MedicalConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService.MedicalEquipmentService;
+import com.karriem.tp2.immutable_domain_model_assignment.Config.MedicalAidConfig.MedicalAidConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.MedicalAidService.MedicalAidService;
 import junit.framework.Assert;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -22,34 +22,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class MedicalEquipmentNGTest {
+public class MedicalAidNGTest {
     
     private static ApplicationContext ctx;
-    private static MedicalEquipmentService service;
+    private static MedicalAidService service;
     
-    public MedicalEquipmentNGTest() {
+    public MedicalAidNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void createMedical() {
+     public void createMedicalAid() {
          
-         Assert.assertEquals(service.createMedicalEquipment().get(0).getCondition(), "Used");
+         Assert.assertEquals(service.createMedicalAid().get(0).getLastName(), "Shepard");
      }
      
      @Test
-     public void updateMedical() {
+     public void updateMedicalAid(){
          
-         Assert.assertEquals(service.createNewMedicalEquipment().get(0).getCondition(), "New");
+         Assert.assertEquals(service.createNewMedicalAid().get(0).getLastName(), "Sheperd");
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(MedicalConfig.class);
-        service = (MedicalEquipmentService)ctx.getBean("med");
+        ctx = new AnnotationConfigApplicationContext(MedicalAidConfig.class);
+        service = (MedicalAidService)ctx.getBean("aid");
     }
 
     @AfterClass

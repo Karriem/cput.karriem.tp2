@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.EmployeesTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.PatientsTest;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Config.EmployeesConfig.MaintenanceConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.EmployeesService.MaintenanceService;
-import org.junit.Assert;
+import com.karriem.tp2.immutable_domain_model_assignment.Config.PatientsConfig.ComaConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.PatientsService.ComaService;
+import junit.framework.Assert;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import static org.testng.Assert.*;
@@ -22,34 +22,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class MaintenanceStaffNGTest {
+public class ComaNGTest {
     
     private static ApplicationContext ctx;
-    private static MaintenanceService service;
+    private static ComaService service;
     
-    public MaintenanceStaffNGTest() {
+    public ComaNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void createMaintenance() {
+     public void createComaPatients() {
      
-         Assert.assertEquals(service.createMain().get(0).getPostalAddress(), "544 hfhsdxb");
+         Assert.assertEquals(service.createComa().get(0).getBedNumber(), "45");
+     }
+     
+     @Test
+     public void updateComaPatients(){
+         
+         Assert.assertEquals(service.createNewComa().get(0).getBedNumber(), "78");
      }
 
-     @Test
-     public void updateMaintenance(){
-         
-         Assert.assertEquals(service.createNewMain().get(0).getPostalAddress(), "34 asdfjj");
-     }
-     
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(MaintenanceConfig.class);
-        service = (MaintenanceService)ctx.getBean("main");
+        ctx = new AnnotationConfigApplicationContext(ComaConfig.class);
+        service = (ComaService)ctx.getBean("coma");
     }
 
     @AfterClass

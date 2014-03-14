@@ -65,7 +65,24 @@ public class ICUTreatmentCrudNGTest {
      
      @Test
      public void testUpdate(){
+      
+         ICUTreatment old = new ICUTreatment.Builder()
+                                    .cost(100000)
+                                    .doctorID("D1001")
+                                    .medicineID("M1001")
+                                    .nurseID("N1001")
+                                    .treatmentDescription("Recovering from heart surgeory")
+                                    .treatmetnID("T1001")
+                                    .build();
          
+         ICUTreatment update = new ICUTreatment.Builder()
+                                   .icuTreatment(old)
+                                   .treatmentDescription("Recovering from transplant")
+                                   .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
      }
      
      @Test

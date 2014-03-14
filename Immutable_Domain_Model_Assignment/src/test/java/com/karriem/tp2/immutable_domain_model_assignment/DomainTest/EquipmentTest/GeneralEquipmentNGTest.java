@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.SuppliersTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.EquipmentTest;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Config.SuppliersConfig.GeneralSuppliersConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.SuppliersService.GeneralSuppliersService;
+import com.karriem.tp2.immutable_domain_model_assignment.Config.EquipmentConfig.GeneralConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService.GeneralEquipmentService;
+import org.junit.Assert;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -22,34 +22,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class GeneralSuppliersNGTest {
+public class GeneralEquipmentNGTest {
     
     private static ApplicationContext ctx;
-    private static GeneralSuppliersService service;
+    private static GeneralEquipmentService service;
     
-    public GeneralSuppliersNGTest() {
+    public GeneralEquipmentNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void createGenSup() {
-         
-         Assert.assertEquals(service.createGenSupplies().get(0).getDate(), "25 October 2014");
-     }
+     public void createGeneralEquipment() {
      
-     @Test
-     public void updateGenSup() {
-     
-         Assert.assertEquals(service.createNewGenSupplies().get(0).getDate(), "27 October 2014");
+         Assert.assertEquals(service.createEquipment().get(0).getQuantity(), 45);
      }
 
+     @Test
+     public void updateGeneralEquipment() {
+     
+         Assert.assertEquals(service.createNewEquipment().get(0).getQuantity(), 5);
+     }
+     
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(GeneralSuppliersConfig.class);
-        service = (GeneralSuppliersService)ctx.getBean("gen");
+        ctx = new AnnotationConfigApplicationContext(GeneralConfig.class);
+        service = (GeneralEquipmentService)ctx.getBean("genEquip");
     }
 
     @AfterClass

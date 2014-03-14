@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.PatientsTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.EmployeesTest;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Config.PatientsConfig.GeneralPatientConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.PatientsService.GeneralPatientService;
+import com.karriem.tp2.immutable_domain_model_assignment.Config.EmployeesConfig.NursesConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.EmployeesService.NursesService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.testng.Assert;
@@ -22,34 +22,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class GeneralPatientNGTest {
+public class NursesNGTest {
     
     private static ApplicationContext ctx;
-    private static GeneralPatientService service;
+    private static NursesService service;
     
-    public GeneralPatientNGTest() {
+    public NursesNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void createGenPat() {
+     public void createNurse() {
      
-         Assert.assertEquals(service.createGeneral().get(0).getDoctorID(), "D1001");
-     }
-     
-      @Test
-     public void updateGenPat() {
-     
-         Assert.assertEquals(service.createNewGeneral().get(0).getDoctorID(), "D1005");
+         Assert.assertEquals(service.createNurse().get(0).getCellNumber(), "455488235");
      }
 
+     @Test
+     public void updateNurse(){
+         
+         Assert.assertEquals(service.createNewNurse().get(0).getCellNumber(), "456456");
+     }
+     
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(GeneralPatientConfig.class);
-        service = (GeneralPatientService)ctx.getBean("genPat");
+        ctx = new AnnotationConfigApplicationContext(NursesConfig.class);
+        service = (NursesService)ctx.getBean("nur");
     }
 
     @AfterClass

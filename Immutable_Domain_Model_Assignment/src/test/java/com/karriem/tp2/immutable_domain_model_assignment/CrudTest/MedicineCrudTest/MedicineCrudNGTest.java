@@ -62,6 +62,20 @@ public class MedicineCrudNGTest {
      @Test
      public void testUpdate(){
          
+         Medicine old = new Medicine.Builder()
+                            .medDescription("Heals HeadAches")
+                            .medID("PA1001")
+                            .quantity(50)
+                            .build();
+         
+         Medicine update = new Medicine.Builder()
+                               .medicine(old)
+                               .quantity(23)
+                               .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
      }
      
      @Test

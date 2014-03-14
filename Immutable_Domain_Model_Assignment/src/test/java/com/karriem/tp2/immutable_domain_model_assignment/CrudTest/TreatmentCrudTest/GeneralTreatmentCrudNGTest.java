@@ -66,6 +66,23 @@ public class GeneralTreatmentCrudNGTest {
      @Test
      public void testUpdate(){
          
+         GeneralTreatments old = new GeneralTreatments.Builder()
+                                    .cost(2000)
+                                    .doctorID("D1001")
+                                    .medicineID("M1001")
+                                    .nurseID("N1001")
+                                    .treatmentDescription("Check up")
+                                    .treatmetnID("T1001")
+                                    .build();
+         
+         GeneralTreatments update = new GeneralTreatments.Builder()
+                                        .genTreatment(old)
+                                        .nurseID("N1005")
+                                        .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
      }
      
      @Test

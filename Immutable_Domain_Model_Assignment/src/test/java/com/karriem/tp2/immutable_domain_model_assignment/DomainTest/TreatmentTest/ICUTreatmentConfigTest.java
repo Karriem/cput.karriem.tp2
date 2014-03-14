@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.TreatmentTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.TreatmentTest;
 
 import com.karriem.tp2.immutable_domain_model_assignment.Config.TreatmentConfig.ICUTreatmentConfig;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.TreatmentService.ICUTreatmentService;

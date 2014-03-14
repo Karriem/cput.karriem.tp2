@@ -70,6 +70,27 @@ public class GeneralPatientCrudNGTest {
      @Test
      public void testUpdate(){
          
+         GeneralPatients old = new GeneralPatients.Builder()
+                            .address("asd 454564564")
+                            .age(45)                            
+                            .cellNumber("4545457637")
+                            .doctorID("D1001")                            
+                            .firstName("jhasfjkhas")
+                            .illness("Cancer")
+                            .lastName("Jack")
+                            .medicine("M1001")
+                            .patID("P1201")
+                            .treatment("T10001")
+                            .build();
+         
+         GeneralPatients update = new GeneralPatients.Builder()
+                                      .patients(old)
+                                      .doctorID("D1002")
+                                      .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
      }
      
      @Test

@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.EmployeesTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.TreatmentTest;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Config.EmployeesConfig.GeneralStaffConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.EmployeesService.GeneralStaffService;
+
+import com.karriem.tp2.immutable_domain_model_assignment.Config.TreatmentConfig.ComaTreatmentConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.TreatmentService.ComaTreatmentService;
+
+import org.junit.Assert;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -22,34 +24,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class GeneralStaffNGTest {
+public class ComaNGTest {
     
     private static ApplicationContext ctx;
-    private static GeneralStaffService service;
+    private static ComaTreatmentService service;
     
-    public GeneralStaffNGTest() {
+    public ComaNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void createGeneral() {
+     public void createComa() {
          
-         Assert.assertEquals(service.createGeneralStaff().get(0).getGenID(), "G1001");
+         Assert.assertEquals(service.createComa().get(0).getDoctorID(), "D1001");
      }
      
      @Test
-     public void updateGeneral(){
-         
-         Assert.assertEquals(service.createNewGeneralStaff().get(0).getGenID(), "G1002");
+     public void updateComa() {
+     
+         Assert.assertEquals(service.createNewComa().get(0).getDoctorID(), "D1005");
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(GeneralStaffConfig.class);
-        service = (GeneralStaffService)ctx.getBean("gen");
+        ctx = new AnnotationConfigApplicationContext(ComaTreatmentConfig.class);
+        service = (ComaTreatmentService)ctx.getBean("comaT");
     }
 
     @AfterClass

@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.PaymentMethodTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.SuppliersTest;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Config.PaymentMethodConfig.CreditCardConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.PaymentMethodService.CreditCardService;
+import com.karriem.tp2.immutable_domain_model_assignment.Config.SuppliersConfig.MedicalSuppliersConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.SuppliersService.MedicalSuppliersService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.testng.Assert;
@@ -22,34 +22,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class CreditCardNGTest {
+public class MedicalSuppliersNGTest {
     
     private static ApplicationContext ctx;
-    private static CreditCardService service;
+    private static MedicalSuppliersService service;
     
-    public CreditCardNGTest() {
+    public MedicalSuppliersNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void createCredit() {
+     public void createMedSup() {
      
-         Assert.assertEquals(service.createCredit().get(0).getCreditCardType(), "Full");
+         Assert.assertEquals(service.createMed().get(0).getDate(), "25 October 2014");
      }
      
      @Test
-     public void updateCredit(){
+     public void updateMedSup() {
          
-         Assert.assertEquals(service.createNewCredit().get(0).getCreditCardType(), "General");
+         Assert.assertEquals(service.createNewMed().get(0).getDate(), "27 October 2014");
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(CreditCardConfig.class);
-        service = (CreditCardService)ctx.getBean("credit");
+        ctx = new AnnotationConfigApplicationContext(MedicalSuppliersConfig.class);
+        service = (MedicalSuppliersService)ctx.getBean("med");
     }
 
     @AfterClass

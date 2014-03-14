@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.SuppliersTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.SuppliersTest;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Config.SuppliersConfig.MedicalSuppliersConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.SuppliersService.MedicalSuppliersService;
+import com.karriem.tp2.immutable_domain_model_assignment.Config.SuppliersConfig.GeneralSuppliersConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.SuppliersService.GeneralSuppliersService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.testng.Assert;
@@ -22,34 +22,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class MedicalSuppliersNGTest {
+public class GeneralSuppliersNGTest {
     
     private static ApplicationContext ctx;
-    private static MedicalSuppliersService service;
+    private static GeneralSuppliersService service;
     
-    public MedicalSuppliersNGTest() {
+    public GeneralSuppliersNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void createMedSup() {
-     
-         Assert.assertEquals(service.createMed().get(0).getDate(), "25 October 2014");
+     public void createGenSup() {
+         
+         Assert.assertEquals(service.createGenSupplies().get(0).getDate(), "25 October 2014");
      }
      
      @Test
-     public void updateMedSup() {
-         
-         Assert.assertEquals(service.createNewMed().get(0).getDate(), "27 October 2014");
+     public void updateGenSup() {
+     
+         Assert.assertEquals(service.createNewGenSupplies().get(0).getDate(), "27 October 2014");
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(MedicalSuppliersConfig.class);
-        service = (MedicalSuppliersService)ctx.getBean("med");
+        ctx = new AnnotationConfigApplicationContext(GeneralSuppliersConfig.class);
+        service = (GeneralSuppliersService)ctx.getBean("gen");
     }
 
     @AfterClass

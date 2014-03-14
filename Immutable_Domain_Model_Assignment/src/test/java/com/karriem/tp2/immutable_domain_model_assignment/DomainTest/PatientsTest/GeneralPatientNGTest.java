@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.EmployeesTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.PatientsTest;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Config.EmployeesConfig.CleaningStaffConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.EmployeesService.CleaningStaffService;
-import junit.framework.Assert;
+import com.karriem.tp2.immutable_domain_model_assignment.Config.PatientsConfig.GeneralPatientConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.PatientsService.GeneralPatientService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -22,34 +22,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class CleaningStaffNGTest {
+public class GeneralPatientNGTest {
     
     private static ApplicationContext ctx;
-    private static CleaningStaffService service;
+    private static GeneralPatientService service;
     
-    public CleaningStaffNGTest() {
+    public GeneralPatientNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void createCleaner() {
-         
-         Assert.assertEquals(service.createCleaner().get(0).getAge(), 24);
+     public void createGenPat() {
+     
+         Assert.assertEquals(service.createGeneral().get(0).getDoctorID(), "D1001");
      }
      
-     @Test
-     public void updateCleaner() {
-         
-        Assert.assertEquals(service.createNewCleaner().get(0).getAge(), 23);
+      @Test
+     public void updateGenPat() {
+     
+         Assert.assertEquals(service.createNewGeneral().get(0).getDoctorID(), "D1005");
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(CleaningStaffConfig.class);
-        service = (CleaningStaffService)ctx.getBean("cleaner");
+        ctx = new AnnotationConfigApplicationContext(GeneralPatientConfig.class);
+        service = (GeneralPatientService)ctx.getBean("genPat");
     }
 
     @AfterClass

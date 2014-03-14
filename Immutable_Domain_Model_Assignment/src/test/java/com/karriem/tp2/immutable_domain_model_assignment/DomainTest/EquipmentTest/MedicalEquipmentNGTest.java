@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.EmployeesTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.EquipmentTest;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Config.EmployeesConfig.NursesConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.EmployeesService.NursesService;
+import com.karriem.tp2.immutable_domain_model_assignment.Config.EquipmentConfig.MedicalConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.EquipmentService.MedicalEquipmentService;
+import junit.framework.Assert;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -22,34 +22,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class NursesNGTest {
+public class MedicalEquipmentNGTest {
     
     private static ApplicationContext ctx;
-    private static NursesService service;
+    private static MedicalEquipmentService service;
     
-    public NursesNGTest() {
+    public MedicalEquipmentNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void createNurse() {
+     public void createMedical() {
+         
+         Assert.assertEquals(service.createMedicalEquipment().get(0).getCondition(), "Used");
+     }
      
-         Assert.assertEquals(service.createNurse().get(0).getCellNumber(), "455488235");
+     @Test
+     public void updateMedical() {
+         
+         Assert.assertEquals(service.createNewMedicalEquipment().get(0).getCondition(), "New");
      }
 
-     @Test
-     public void updateNurse(){
-         
-         Assert.assertEquals(service.createNewNurse().get(0).getCellNumber(), "456456");
-     }
-     
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(NursesConfig.class);
-        service = (NursesService)ctx.getBean("nur");
+        ctx = new AnnotationConfigApplicationContext(MedicalConfig.class);
+        service = (MedicalEquipmentService)ctx.getBean("med");
     }
 
     @AfterClass

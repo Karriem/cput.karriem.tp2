@@ -63,6 +63,21 @@ public class GeneralEquipmentCrudNGTest {
      @Test
      public void testUpdate(){
          
+         GeneralEquipment old = new GeneralEquipment.Builder()
+                                    .condition("New")
+                                    .equipID("E1001")
+                                    .equipName("Broom")
+                                    .quantity(10)
+                                    .build();
+         
+         GeneralEquipment update = new GeneralEquipment.Builder()
+                                       .genEquipment(old)
+                                       .equipName("Bucket")
+                                       .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
      }
      
      @Test

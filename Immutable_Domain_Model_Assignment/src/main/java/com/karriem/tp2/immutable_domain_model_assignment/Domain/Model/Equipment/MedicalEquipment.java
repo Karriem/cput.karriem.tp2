@@ -95,7 +95,7 @@ public class MedicalEquipment {
             return new MedicalEquipment(this);
         }
         
-        public Builder genEquipment(MedicalEquipment equip){
+        public Builder medEquipment(MedicalEquipment equip){
             
             this.id = equip.getId();
             this.equipID = equip.getEquipID();

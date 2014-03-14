@@ -65,6 +65,22 @@ public class MonthlyPaymentsCrudNGTest {
      @Test
      public void testUpdate(){
          
+         MonthlyPayments old = new MonthlyPayments.Builder()
+                                   .monthlyInstallments(500)
+                                   .months(5)
+                                   .patientID("P1001")
+                                   .paymentID("Pay1001")
+                                   .treatmentCost(2500)
+                                   .build();
+         
+         MonthlyPayments update = new MonthlyPayments.Builder()
+                                      .monthlyPayments(old)
+                                      .months(8)
+                                      .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
      }
      
      @Test

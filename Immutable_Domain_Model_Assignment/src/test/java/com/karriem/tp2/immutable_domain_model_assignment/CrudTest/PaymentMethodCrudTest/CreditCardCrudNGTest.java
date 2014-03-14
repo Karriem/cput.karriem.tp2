@@ -64,6 +64,21 @@ public class CreditCardCrudNGTest {
      @Test
      public void testUpdate(){
          
+         CreditCard old = new CreditCard.Builder()
+                              .accountHolder("S.Smith")
+                              .creditCardID("C101")
+                              .creditCardNo("4845488asfas4")
+                              .creditCardType("Mastercard")
+                              .build();
+         
+         CreditCard update = new CreditCard.Builder()
+                                 .creditCard(old)
+                                 .creditCardType("Pink")
+                                 .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
      }
      
      @Test

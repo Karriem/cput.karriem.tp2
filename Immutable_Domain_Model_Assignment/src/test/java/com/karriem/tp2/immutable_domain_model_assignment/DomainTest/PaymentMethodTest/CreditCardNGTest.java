@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.PatientsTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.PaymentMethodTest;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Config.PatientsConfig.ComaConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.PatientsService.ComaService;
-import junit.framework.Assert;
+import com.karriem.tp2.immutable_domain_model_assignment.Config.PaymentMethodConfig.CreditCardConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.PaymentMethodService.CreditCardService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -22,34 +22,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class ComaNGTest {
+public class CreditCardNGTest {
     
     private static ApplicationContext ctx;
-    private static ComaService service;
+    private static CreditCardService service;
     
-    public ComaNGTest() {
+    public CreditCardNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void createComaPatients() {
+     public void createCredit() {
      
-         Assert.assertEquals(service.createComa().get(0).getBedNumber(), "45");
+         Assert.assertEquals(service.createCredit().get(0).getCreditCardType(), "Full");
      }
      
      @Test
-     public void updateComaPatients(){
+     public void updateCredit(){
          
-         Assert.assertEquals(service.createNewComa().get(0).getBedNumber(), "78");
+         Assert.assertEquals(service.createNewCredit().get(0).getCreditCardType(), "General");
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(ComaConfig.class);
-        service = (ComaService)ctx.getBean("coma");
+        ctx = new AnnotationConfigApplicationContext(CreditCardConfig.class);
+        service = (CreditCardService)ctx.getBean("credit");
     }
 
     @AfterClass

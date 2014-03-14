@@ -72,6 +72,29 @@ public class TerminalCrudNGTest {
      @Test
      public void testUpdate(){
          
+         TerminalPatients old = new TerminalPatients.Builder()
+                            .address("asd 454564564")
+                            .age(45)  
+                            .bedNumber("458")
+                            .cellNumber("4545457637")
+                            .doctorID("D1001")                            
+                            .firstName("jhasfjkhas")
+                            .illness("Cancer")
+                            .lastName("Jack")
+                            .medicine("M1001")
+                            .patID("P1201")
+                            .timeLeft("2 Days")
+                            .treatment("T10001")
+                            .build();
+         
+         TerminalPatients update = new TerminalPatients.Builder()
+                                       .terminalPatients(old)
+                                       .address(" 8d dafadsf ghgh")
+                                       .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
      }
      
      @Test

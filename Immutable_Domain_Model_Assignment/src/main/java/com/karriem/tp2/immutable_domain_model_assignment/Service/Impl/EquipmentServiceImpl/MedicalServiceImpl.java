@@ -38,7 +38,7 @@ public class MedicalServiceImpl implements MedicalEquipmentService{
     public List<MedicalEquipment> createNewMedicalEquipment() {
         
         MedicalEquipment newMed = new MedicalEquipment.Builder()
-                                    .genEquipment(new MedicalServiceImpl().createMedicalEquipment().get(0))
+                                    .medEquipment(new MedicalServiceImpl().createMedicalEquipment().get(0))
                                     .condition("New")
                                     .build();
         

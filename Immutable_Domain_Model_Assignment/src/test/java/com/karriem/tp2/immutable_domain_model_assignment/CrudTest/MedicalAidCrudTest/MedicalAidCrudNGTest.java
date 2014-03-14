@@ -65,6 +65,23 @@ public class MedicalAidCrudNGTest {
      @Test
      public void testUpdate(){
          
+         MedicalAid old = new MedicalAid.Builder()
+                              .amtCover(5000)
+                              .lastName("Petersen")
+                              .medicalAidName("LifeCover")
+                              .medicalAidNo("15456164894")
+                              .patientID("P1001")
+                              .typeCover("Full")
+                              .build();
+         
+         MedicalAid update = new MedicalAid.Builder()
+                                 .medicalAid(old)
+                                 .amtCover(8000)
+                                 .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);         
      }
      
      @Test

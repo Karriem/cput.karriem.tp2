@@ -4,15 +4,13 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.TreatmentTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.PatientsTest;
 
-
-import com.karriem.tp2.immutable_domain_model_assignment.Config.TreatmentConfig.ComaTreatmentConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.TreatmentService.ComaTreatmentService;
-
-import org.junit.Assert;
+import com.karriem.tp2.immutable_domain_model_assignment.Config.PatientsConfig.ICUConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.PatientsService.ICUService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -24,34 +22,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class ComaNGTest {
+public class ICUNGTest {
     
     private static ApplicationContext ctx;
-    private static ComaTreatmentService service;
+    private static ICUService service;
     
-    public ComaNGTest() {
+    public ICUNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
-    //
+    
      @Test
-     public void createComa() {
-         
-         Assert.assertEquals(service.createComa().get(0).getDoctorID(), "D1001");
+     public void createICU() {
+     
+         Assert.assertEquals(service.createICU().get(0).getFirstName(), "Jack");
      }
      
      @Test
-     public void updateComa() {
+     public void updateICU() {
      
-         Assert.assertEquals(service.createNewComa().get(0).getDoctorID(), "D1005");
+         Assert.assertEquals(service.createNewICU().get(0).getFirstName(), "Garrus");
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(ComaTreatmentConfig.class);
-        service = (ComaTreatmentService)ctx.getBean("comaT");
+        ctx = new AnnotationConfigApplicationContext(ICUConfig.class);
+        service = (ICUService)ctx.getBean("ICU");
     }
 
     @AfterClass

@@ -71,6 +71,28 @@ public class ICUCrudNGTest {
      @Test
      public void testUpdate(){
          
+         ICUPatients old = new ICUPatients.Builder()
+                            .address("asd 454564564")
+                            .age(45)  
+                            .bedNumber("458")
+                            .cellNumber("4545457637")
+                            .doctorID("D1001")                            
+                            .firstName("jhasfjkhas")
+                            .illness("Cancer")
+                            .lastName("Jack")
+                            .medicine("M1001")
+                            .patID("P1201")
+                            .treatment("T10001")
+                            .build();
+         
+         ICUPatients update = new ICUPatients.Builder()
+                                  .icuPatients(old)
+                                  .firstName("Siff")
+                                  .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
      }
      
      @Test

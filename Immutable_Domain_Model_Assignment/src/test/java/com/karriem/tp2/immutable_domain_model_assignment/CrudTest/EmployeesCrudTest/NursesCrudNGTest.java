@@ -66,6 +66,24 @@ public class NursesCrudNGTest {
      @Test
      public void testUpdate(){
      
+         NursesPersonal old = new NursesPersonal.Builder()
+                                         .age(25)
+                                         .cellNumber("21455785")
+                                         .nurID("N1001")
+                                         .firstName("Mikhail")
+                                         .jobDescription("Nurse")
+                                         .lastName("Sissing")
+                                         .postalAddress("sh512hsd4h56")
+                                         .build();
+         
+         NursesPersonal update = new NursesPersonal.Builder()
+                                  .nurse(old)
+                                  .cellNumber("454851454")
+                                  .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
      }
      
      @Test

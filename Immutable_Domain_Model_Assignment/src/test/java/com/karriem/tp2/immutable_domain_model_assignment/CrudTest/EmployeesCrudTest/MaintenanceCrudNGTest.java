@@ -66,6 +66,25 @@ public class MaintenanceCrudNGTest {
      @Test
      public void testUpdate(){
      
+         MaintenancePersonal old = new MaintenancePersonal.Builder()
+                                         .age(25)
+                                         .cellNumber("21455785")
+                                         .mID("M1001")
+                                         .firstName("Mikhail")
+                                         .jobDescription("Repairman")
+                                         .lastName("Sissing")
+                                         .postalAddress("sh512hsd4h56")
+                                         .build();
+         
+         MaintenancePersonal update = new MaintenancePersonal.Builder()
+                                          .maintenance(old)
+                                          .lastName("Uchiha")
+                                          .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
+                                       
      }
      
      @Test

@@ -77,21 +77,16 @@ public class CleaningStaffCrudNGTest {
                                          .lastName("Sissing")
                                          .postalAddress("sh512hsd4h56")
                                          .build();
-          
-          System.out.println(cSPOld.getAge());
-         
-           System.out.println(cSPOld.getFirstName());
+   
          CleaningStaffPersonal cSP = new CleaningStaffPersonal.Builder()
-                                         .cleanID("C1001")
+                                         .claeaningStaff(cSPOld)
                                          .age(26)
                                          .build();
+         
          cSPOld = crudService.merge(cSP);
          when(crudService.merge(cSP)).thenReturn(cSPOld);
          Mockito.verify(crudService).merge(cSP);   
          
-         System.out.println(cSP.getAge());
-        
-         System.out.println(cSP.getFirstName());
      }
      
      @Test

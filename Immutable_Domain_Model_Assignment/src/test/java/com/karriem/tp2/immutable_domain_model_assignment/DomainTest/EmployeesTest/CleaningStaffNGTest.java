@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.PaymentMethodTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.EmployeesTest;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Config.PaymentMethodConfig.MonthlyPaymentConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.PaymentMethodService.MonthlyPaymentService;
+import com.karriem.tp2.immutable_domain_model_assignment.Config.EmployeesConfig.CleaningStaffConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.EmployeesService.CleaningStaffService;
 import junit.framework.Assert;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -22,34 +22,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class MonthlyPaymentNGTest {
+public class CleaningStaffNGTest {
     
     private static ApplicationContext ctx;
-    private static MonthlyPaymentService service;
+    private static CleaningStaffService service;
     
-    public MonthlyPaymentNGTest() {
+    public CleaningStaffNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void createMonthly() {
-     
-         Assert.assertEquals(service.createMonthly().get(0).getPatientID(), "P1001");
+     public void createCleaner() {
+         
+         Assert.assertEquals(service.createCleaner().get(0).getAge(), 24);
      }
      
      @Test
-     public void updateMonthly() {
-     
-         Assert.assertEquals(service.createNewMonthly().get(0).getPatientID(), "P1002");
+     public void updateCleaner() {
+         
+        Assert.assertEquals(service.createNewCleaner().get(0).getAge(), 23);
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(MonthlyPaymentConfig.class);
-        service = (MonthlyPaymentService)ctx.getBean("monthly");
+        ctx = new AnnotationConfigApplicationContext(CleaningStaffConfig.class);
+        service = (CleaningStaffService)ctx.getBean("cleaner");
     }
 
     @AfterClass

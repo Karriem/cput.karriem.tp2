@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.MedicineTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.PaymentMethodTest;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Config.MedicineConfig.MedicineConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.MedicineService.MedicineService;
+import com.karriem.tp2.immutable_domain_model_assignment.Config.PaymentMethodConfig.MonthlyPaymentConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.PaymentMethodService.MonthlyPaymentService;
 import junit.framework.Assert;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -22,34 +22,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class MedicineNGTest {
+public class MonthlyPaymentNGTest {
     
     private static ApplicationContext ctx;
-    private static MedicineService service;
+    private static MonthlyPaymentService service;
     
-    public MedicineNGTest() {
+    public MonthlyPaymentNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void createMedicine() {
+     public void createMonthly() {
      
-         Assert.assertEquals(service.createMedicine().get(0).getQuantity(), 5);
+         Assert.assertEquals(service.createMonthly().get(0).getPatientID(), "P1001");
      }
      
      @Test
-     public void updateMedicine() {
+     public void updateMonthly() {
      
-         Assert.assertEquals(service.createNewMedicine().get(0).getQuantity(), 8);
+         Assert.assertEquals(service.createNewMonthly().get(0).getPatientID(), "P1002");
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(MedicineConfig.class);
-        service = (MedicineService)ctx.getBean("medicine");
+        ctx = new AnnotationConfigApplicationContext(MonthlyPaymentConfig.class);
+        service = (MonthlyPaymentService)ctx.getBean("monthly");
     }
 
     @AfterClass

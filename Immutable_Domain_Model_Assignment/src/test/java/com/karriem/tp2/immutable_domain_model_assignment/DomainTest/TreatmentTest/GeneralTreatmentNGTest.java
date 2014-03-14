@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.PatientsTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.TreatmentTest;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Config.PatientsConfig.TerminalConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.PatientsService.TerminalService;
+import com.karriem.tp2.immutable_domain_model_assignment.Config.TreatmentConfig.GeneralTreatmentConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.TreatmentService.GeneralTreatmentService;
+import org.junit.Assert;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -22,34 +22,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class TerminalNGTest {
+public class GeneralTreatmentNGTest {
     
     private static ApplicationContext ctx;
-    private static TerminalService service;
+    private static GeneralTreatmentService service;
     
-    public TerminalNGTest() {
+    public GeneralTreatmentNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void createTerminal() {
+     public void createGeneral() {
      
-         Assert.assertEquals(service.createICU().get(0).getTimeLeft(), "5 Days");
+         Assert.assertEquals(service.createGeneral().get(0).getDoctorID(), "D1001");
      }
      
      @Test
-     public void updateTerminal(){
-         
-         Assert.assertEquals(service.createNewICU().get(0).getTimeLeft(), "10 Days");
+     public void updateGeneral() {
+     
+         Assert.assertEquals(service.createNewGeneral().get(0).getDoctorID(), "D1005");
      }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(TerminalConfig.class);
-        service = (TerminalService)ctx.getBean("Terminal");
+        ctx = new AnnotationConfigApplicationContext(GeneralTreatmentConfig.class);
+        service = (GeneralTreatmentService)ctx.getBean("genTreat");
     }
 
     @AfterClass

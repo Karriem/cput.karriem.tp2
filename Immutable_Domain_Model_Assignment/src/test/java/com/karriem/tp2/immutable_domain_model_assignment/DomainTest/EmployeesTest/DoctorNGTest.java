@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.EmployeesTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.EmployeesTest;
 
 import com.karriem.tp2.immutable_domain_model_assignment.Config.EmployeesConfig.DoctorConfig;
 import com.karriem.tp2.immutable_domain_model_assignment.Service.EmployeesService.DoctorService;

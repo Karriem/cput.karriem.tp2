@@ -72,6 +72,29 @@ public class ComaCrudNGTest {
      @Test
      public void testUpdate(){
          
+         ComaPatients old = new ComaPatients.Builder()
+                            .address("asd 454564564")
+                            .age(45)
+                            .bedNumber("4")
+                            .cellNumber("4545457637")
+                            .doctorID("D1001")
+                            .durationOfComa("45 Days")
+                            .firstName("jhasfjkhas")
+                            .illness("Cancer")
+                            .lastName("Jack")
+                            .medicine("M1001")
+                            .patID("P1201")
+                            .treatment("T10001")
+                            .build();
+         
+         ComaPatients update = new ComaPatients.Builder()
+                                   .comaPatients(old)
+                                   .bedNumber("5")
+                                   .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
      }
      
      @Test

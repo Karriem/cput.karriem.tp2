@@ -67,6 +67,24 @@ public class MedicalSuppliersCrudNGTest {
      @Test
      public void testUpdate(){
          
+         MedicalSupplies old = new MedicalSupplies.Builder()
+                                   .amt(25)
+                                   .cost(5000)
+                                   .date("25 December")
+                                   .description("Medical Supplies")
+                                   .equipmentID("M1001")
+                                   .suppliersID("S1001")
+                                   .suppliersName("Yes")
+                                   .build();
+         
+         MedicalSupplies update = new MedicalSupplies.Builder()
+                                      .medSupplier(old)
+                                      .cost(7800)
+                                      .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
      }
      
      @Test

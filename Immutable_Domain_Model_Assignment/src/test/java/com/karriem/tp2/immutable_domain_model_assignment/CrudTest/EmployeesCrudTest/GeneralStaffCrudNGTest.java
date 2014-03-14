@@ -66,6 +66,24 @@ public class GeneralStaffCrudNGTest {
      @Test
      public void testUpdate(){
          
+         GeneralStaffPersonal cSP = new GeneralStaffPersonal.Builder()
+                                         .age(25)
+                                         .cellNumber("21455785")
+                                         .genID("G1001")
+                                         .firstName("Mikhail")
+                                         .jobDescription("Secretary")
+                                         .lastName("Sissing")
+                                         .postalAddress("sh512hsd4h56")
+                                         .build();
+         
+         GeneralStaffPersonal cSP2 = new GeneralStaffPersonal.Builder()
+                                         .generalStaff(cSP)
+                                         .firstName("Karriem")
+                                         .build();
+         
+         cSP = crudService.merge(cSP2);
+         when(crudService.merge(cSP2)).thenReturn(cSP);
+         Mockito.verify(crudService).merge(cSP2);  
      }
      
      @Test

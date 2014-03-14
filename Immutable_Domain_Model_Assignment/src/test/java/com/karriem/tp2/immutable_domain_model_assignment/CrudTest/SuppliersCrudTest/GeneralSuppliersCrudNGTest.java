@@ -67,6 +67,24 @@ public class GeneralSuppliersCrudNGTest {
      @Test
      public void testUpdate(){
          
+         GeneralSupplies old = new GeneralSupplies.Builder()
+                                   .amt(25)
+                                   .cost(5000)
+                                   .date("25 December")
+                                   .description("General Suppliers")
+                                   .equipmentID("E1001")
+                                   .suppliersID("S1001")
+                                   .suppliersName("Yes")
+                                   .build();
+         
+         GeneralSupplies update = new GeneralSupplies.Builder()
+                                      .genSupplier(old)
+                                      .date("26 August")
+                                      .build();
+                 
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
      }
      
      @Test

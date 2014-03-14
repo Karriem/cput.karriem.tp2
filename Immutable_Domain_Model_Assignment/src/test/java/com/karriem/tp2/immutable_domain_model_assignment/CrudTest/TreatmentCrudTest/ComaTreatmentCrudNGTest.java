@@ -66,6 +66,23 @@ public class ComaTreatmentCrudNGTest {
      @Test
      public void testUpdate(){
          
+         ComaTreatment old = new ComaTreatment.Builder()
+                                .cost(4500)
+                                .doctorID("D1001")
+                                .medicineID("M1001")
+                                .nurseID("N1001")
+                                .treatmentDescription("Surgeory to left eye")
+                                .treatmetnID("T1001")
+                                .build();
+         
+         ComaTreatment update = new ComaTreatment.Builder()
+                                    .comaTreatment(old)
+                                    .medicineID("M1002")
+                                    .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
      }
      
      @Test

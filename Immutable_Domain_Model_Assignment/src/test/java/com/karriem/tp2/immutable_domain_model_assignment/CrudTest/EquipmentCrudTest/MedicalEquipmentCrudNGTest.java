@@ -63,6 +63,21 @@ public class MedicalEquipmentCrudNGTest {
      @Test
      public void testUpdate(){
          
+         MedicalEquipment old = new MedicalEquipment.Builder()
+                                    .condition("New")
+                                    .equipID("M1001")
+                                    .equipName("Broom")
+                                    .quantity(10)
+                                    .build();
+         
+         MedicalEquipment update = new MedicalEquipment.Builder()
+                                       .medEquipment(old)
+                                       .condition("Used")
+                                       .build();
+         
+         old = crudService.merge(update);
+         when(crudService.merge(update)).thenReturn(old);
+         Mockito.verify(crudService).merge(update);
      }
      
      @Test

@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.karriem.tp2.immutable_domain_model_assignment.TreatmentTest;
+package com.karriem.tp2.immutable_domain_model_assignment.DomainTest.EmployeesTest;
 
-import com.karriem.tp2.immutable_domain_model_assignment.Config.TreatmentConfig.GeneralTreatmentConfig;
-import com.karriem.tp2.immutable_domain_model_assignment.Service.TreatmentService.GeneralTreatmentService;
+import com.karriem.tp2.immutable_domain_model_assignment.Config.EmployeesConfig.MaintenanceConfig;
+import com.karriem.tp2.immutable_domain_model_assignment.Service.EmployeesService.MaintenanceService;
 import org.junit.Assert;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -22,34 +22,34 @@ import org.testng.annotations.Test;
  *
  * @author karriem
  */
-public class GeneralTreatmentNGTest {
+public class MaintenanceStaffNGTest {
     
     private static ApplicationContext ctx;
-    private static GeneralTreatmentService service;
+    private static MaintenanceService service;
     
-    public GeneralTreatmentNGTest() {
+    public MaintenanceStaffNGTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void createGeneral() {
+     public void createMaintenance() {
      
-         Assert.assertEquals(service.createGeneral().get(0).getDoctorID(), "D1001");
-     }
-     
-     @Test
-     public void updateGeneral() {
-     
-         Assert.assertEquals(service.createNewGeneral().get(0).getDoctorID(), "D1005");
+         Assert.assertEquals(service.createMain().get(0).getPostalAddress(), "544 hfhsdxb");
      }
 
+     @Test
+     public void updateMaintenance(){
+         
+         Assert.assertEquals(service.createNewMain().get(0).getPostalAddress(), "34 asdfjj");
+     }
+     
     @BeforeClass
     public static void setUpClass() throws Exception {
         
-        ctx = new AnnotationConfigApplicationContext(GeneralTreatmentConfig.class);
-        service = (GeneralTreatmentService)ctx.getBean("genTreat");
+        ctx = new AnnotationConfigApplicationContext(MaintenanceConfig.class);
+        service = (MaintenanceService)ctx.getBean("main");
     }
 
     @AfterClass

@@ -66,6 +66,24 @@ public class DoctorsCrudNGTest {
      @Test
      public void testUpdate(){
    
+         DoctorsPersonal dPOld = new DoctorsPersonal.Builder()
+                                         .age(25)
+                                         .cellNumber("21455785")
+                                         .docId("D1001")
+                                         .firstName("Mikhail")
+                                         .jobDescription("GP")
+                                         .lastName("Sissing")
+                                         .postalAddress("sh512hsd4h56")
+                                         .build();
+         
+         DoctorsPersonal dp2 = new DoctorsPersonal.Builder()
+                                   .doctor(dPOld)
+                                   .docId("D1101")
+                                   .build();
+         
+         dPOld = crudService.merge(dp2);
+         when(crudService.merge(dp2)).thenReturn(dPOld);
+         Mockito.verify(crudService).merge(dp2);
      }
      
      @Test
